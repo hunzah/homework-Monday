@@ -1,27 +1,27 @@
-import React, {Dispatch, SetStateAction} from 'react'
+import React from 'react'
 import Affair from './affair/Affair'
 import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: Array<AffairType> // need to fix any
-    setFilter: Dispatch<SetStateAction<FilterType>>
-    deleteAffairCallback:(_id: number) => void
+    data: AffairType[] // need to fix any
+    setFilter: (filter:FilterType)=> void
+    deleteAffairCallback: (id:number) => void
     filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
-        props.setFilter('all')
+        props.setFilter('all')// need to fix
     }
     const setHigh = () => {
-        props.setFilter('high')
+        props.setFilter('high')// need to fix
     }
     const setMiddle = () => {
-        props.setFilter('middle')
+        props.setFilter('middle')// need to fix
     }
     const setLow = () => {
-        props.setFilter('low')
+        props.setFilter('low') // need to fix
     }
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
