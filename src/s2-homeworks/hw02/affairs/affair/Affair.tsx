@@ -39,7 +39,7 @@ function Affair(props: AffairPropsType) {
 
             >
                 {/*текст кнопки могут изменить студенты*/}
-               Delete
+               X
                 {/**/}
             </button>
         </div>

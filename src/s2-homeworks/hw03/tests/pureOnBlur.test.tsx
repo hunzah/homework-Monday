@@ -1,7 +1,7 @@
 import React from 'react'
 import {pureOnBlur} from '../GreetingContainer'
 
-let name: any
+let name: string
 let error: any
 const setError = (a: any) => {
     error = a
