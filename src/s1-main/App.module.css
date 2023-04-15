@@ -1,11 +1,10 @@
 .App {
     background: #FFFFFF;
-    padding: 0 70px ;
     border-bottom: #0059b3;
 }
 
 .hw {
-
+    padding: 0 70px ;
 display: block;
     margin: 168px 0 ;
 
@@ -14,7 +13,7 @@ display: block;
 
 .hwTitle {
 
-
+    padding: 0 70px ;
     border-bottom: 2px solid #D9D9D9;
     border-top: 2px solid #D9D9D9;
     padding-top: 40px;
