@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { message0 } from '../HW1'
+import {message0} from '../HW1'
 import s from './MessageSender.module.css'
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
@@ -39,10 +39,13 @@ const MessageSender = (props: any) => {
         e.key === 'Enter' && e.shiftKey && addMessage()
     }
 
+    const disabled = text.trim().length === 0
+
+
     return (
         <>
             {messages.map((m) => (
-                <M key={'message' + m.id} message={m} />
+                <M key={'message' + m.id} message={m}/>
             ))}
 
             <div id={'hw1-send-message-form'} className={s.sendForm}>
@@ -61,7 +64,7 @@ const MessageSender = (props: any) => {
                 <button
                     id={'hw1-button'}
                     className={s.button}
-
+                    disabled={disabled}
                     onClick={addMessage}
                 >
                     {/*текст кнопки могут изменить студенты*/}
