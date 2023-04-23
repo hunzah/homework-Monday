@@ -3,16 +3,15 @@
     padding: 5px 24px;
     border-radius: 3px;
     border: none;
-    background: #0066CC;
-color: white;
     font-weight: 600;
     cursor: pointer;
+    color: white;
+
 }
 
 .disabled {
     color: white;
     background: #004D99;
-
     opacity: 0.5;
 }
 
@@ -24,6 +23,7 @@ color: white;
 }
 
 .default {
+    background: #0066CC;
 
 }
 
