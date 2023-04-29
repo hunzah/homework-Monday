@@ -17,6 +17,8 @@
 }
 
 .nav a.active {
+    background-color: black;
+    width: 5000000px;
 }
 .close {
 }
