@@ -11,14 +11,14 @@
 }
 
 .nav a {
+    text-decoration:none ;
 }
 
 .nav a:hover {
 }
 
 .nav a.active {
-    background-color: black;
-    width: 5000000px;
+    text-decoration:none ;
 }
 .close {
 }
