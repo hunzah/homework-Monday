@@ -4,28 +4,20 @@
 }
 
 .hw {
-    padding: 0 70px ;
-display: block;
-    margin: 168px 0 ;
+    padding: 0 4.6vw;
+    display: block;
+    margin: 168px 0;
 
 
 }
 
 .hwTitle {
-
-    padding: 0 70px ;
+    padding: 2.6vw 4.6vw;
     border-bottom: 2px solid #D9D9D9;
     border-top: 2px solid #D9D9D9;
-    padding-top: 40px;
-    padding-bottom: 10px;
     width: 100%;
 
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height */
-
-
-
-
 }

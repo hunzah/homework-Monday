@@ -1,27 +1,56 @@
+
+
 .sidebar {
+    display: none;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar.open {
+    display: block;
+    border: 1px solid blue;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 21vw;
 }
 
 .background {
+
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 4.6vw ;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
 }
 
 .nav a {
-    text-decoration:none ;
+    text-decoration:none;
+    color:black;
+    padding-bottom: 2vw;
+
 }
 
 .nav a:hover {
+    color: #58ACFF;
 }
 
 .nav a.active {
-    text-decoration:none ;
+    color:#0059B2;;
 }
 .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .close img {
+    width: 24px;
+    height: 24px;
 }

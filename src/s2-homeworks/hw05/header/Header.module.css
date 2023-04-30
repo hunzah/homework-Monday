@@ -2,7 +2,15 @@
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1vw 4.6vw;
 }
 
 .header h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
 }
