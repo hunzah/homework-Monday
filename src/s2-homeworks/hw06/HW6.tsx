@@ -28,18 +28,18 @@ const HW6 = () => {
 
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
-                <div className={s.editableSpanContainer}>
-                    <SuperEditableSpan
-                        id={'hw6-spanable-input'}
-                        value={value}
-                        onChangeText={setValue}
-                        spanProps={{
-                            id: 'hw6-editable-span',
-                            defaultText: 'enter text...',
-                        }}
-                    />
-                </div>
-
+                <div className={s.container}>
+                    <div className={s.editableSpanContainer}>
+                        <SuperEditableSpan
+                            id={'hw6-spanable-input'}
+                            value={value}
+                            onChangeText={setValue}
+                            spanProps={{
+                                id: 'hw6-editable-span',
+                                defaultText: 'enter text...',
+                            }}
+                        />
+                    </div>
                 <div className={s.buttonsContainer}>
                     <SuperButton id={'hw6-save'} onClick={save}>
                         Save to ls
@@ -51,6 +51,7 @@ const HW6 = () => {
                     >
                         Get from ls
                     </SuperButton>
+                </div>
                 </div>
             </div>
         </div>
