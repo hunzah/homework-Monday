@@ -1,5 +1,7 @@
 .item {
-
+    display: flex;
+    justify-content: space-between;
+    width: 29vw;
 }
 
 .item:last-of-type {
@@ -9,26 +11,25 @@
 }
 
 .buttonsContainer {
-display: flex;
-    justify-content:center;
-    gap:10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .container {
-    /*position: absolute;*/
-    width:  606px;
+    width: 50vw;
 
 }
 
 .thead {
     height: 36px;
-    left: 70px;
     background: #E5E5E5;
+
 
 }
 
 .nameCol {
-    margin-right: 200px;
+
 }
 
 .ageCol {
