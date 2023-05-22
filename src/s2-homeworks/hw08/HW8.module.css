@@ -1,37 +1,44 @@
 .item {
-    display: flex;
-    justify-content: space-between;
-    width: 29vw;
+
+
 }
 
 .item:last-of-type {
 }
 
 .users {
+width: 100%;
 }
 
 .buttonsContainer {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 10px;
+    border-radius: 3px;
+    padding: 5px 0 5px 0;
+
 }
 
 .container {
     width: 50vw;
-
+    margin-top: -9vw;
 }
 
+
 .thead {
-    height: 36px;
     background: #E5E5E5;
-
-
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
 }
 
 .nameCol {
-
+    height: 2.35vw;
+    width: 29vw;
+    font-size: 14px;
 }
 
 .ageCol {
-
+    font-size: 14px;
+    font-weight: 600;
 }
