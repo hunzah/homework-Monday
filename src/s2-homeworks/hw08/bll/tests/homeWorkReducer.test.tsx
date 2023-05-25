@@ -1,6 +1,7 @@
 import React from 'react'
 import { homeWorkReducer } from '../homeWorkReducer'
 import { UserType } from '../../HW8'
+import assert from 'assert';
 
 let initialState: UserType[]
 
@@ -39,3 +40,5 @@ test('check age 18', () => {
 
     expect(newState.length).toBe(4)
 })
+
+
