@@ -3,14 +3,13 @@ import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
-// import { Timer } from 'node_modules/@types/node';
 
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
     const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
-    const [show, setShow] = useState<boolean>(true)
+    const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
         const newTimerId: any = setInterval(() => {
@@ -37,16 +36,16 @@ function Clock() {
     const stringTime = `
     ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}
     `; // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date.toLocaleString('en-US', { month: 'long' }); // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = date.toLocaleDateString('ru-Ru');
+    date.toLocaleDateString('en-US', { month: 'long' });// день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = date.getDay() === 1 ? 'Monday' : date.getDay() === 2 ? 'Tuesday' :
         date.getDay() === 3 ? 'Wednesday' : date.getDay() === 4 ? 'Thursday' :
             date.getDay() === 5 ? 'Friday' : date.getDay() === 6 ? 'Saturday' : 'Sunday'// пишут студенты
 
-    const stringMonth = `
-    ${date.getDate().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()}
-    ` || <br/>// пишут студенты
+    const stringMonth =
+    date.toLocaleDateString('en-US', { month: 'long' });// пишут студенты
 
     return (
         <div className={s.clock}>
@@ -98,3 +97,5 @@ function Clock() {
 }
 
 export default Clock
+
+
