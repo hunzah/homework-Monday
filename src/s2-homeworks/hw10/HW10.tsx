@@ -16,7 +16,6 @@ const HW10 = () => {
     // useSelector, useDispatch // пишет студент
     const isLoading: boolean = useSelector((state:any) => state.loading.isLoading);
     const dispatch = useDispatch()
-    console.log(isLoading)
     const setLoading = () => {
         dispatch(loadingAC(true));// пишет студент // показать крутилку на 1,5 секунд
     }
@@ -32,7 +31,7 @@ const HW10 = () => {
         <div id={'hw10'}>
             <div className={s2.hwTitle}>Homework #10</div>
 
-            <div className={s2.hw}>
+            <div className={s2.hw} style={{ marginTop: '50px' }}>
                 {isLoading ? (
                     <div id={'hw10-loading'}>
                         <Loader/>

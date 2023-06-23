@@ -6,7 +6,7 @@ import axios from 'axios'
 import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
-import errorUnknown from './images/error.svg'
+import error from './images/error.svg'
 
 /*
 * 1 - дописать функцию send
@@ -36,12 +36,35 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText('...всё ок)\n' +
+                    'код 200 - обычно означает что скорее всего всё ок)')
+                setInfo('')
                 // дописать
 
             })
             .catch((e) => {
+                // const errorStatus = e.response.data.message
+                const errorCode = e.response.status
                 // дописать
-
+                if (errorCode === 400) {
+                    setCode('Ошибка 400!')
+                    setImage(error400)
+                    setText('Ты не отправил success в body вообще!\n' +
+                        'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    setInfo('')
+                } else if (errorCode === 500) {
+                    setCode('Ошибка 500!')
+                    setImage(error500)
+                    setText(`эмитация ошибки на сервере
+                    ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных`)
+                    setInfo('')
+                } else {
+                    setCode('Error!')
+                    setImage(error)
+                    setText(`Network Error
+                    AxiosError`)
+                    setInfo('')
+                }
             })
     }
 
@@ -52,6 +75,7 @@ const HW13 = () => {
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
                     <SuperButton
+                        disabled={info === '...loading'}
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
