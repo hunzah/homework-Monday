@@ -43,16 +43,15 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                // const errorStatus = e.response.data.message
                 const errorCode = e.response.status
                 // дописать
-                if (errorCode === 400) {
+                if (errorCode === 500) {
                     setCode('Ошибка 400!')
                     setImage(error400)
                     setText('Ты не отправил success в body вообще!\n' +
                         'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                     setInfo('')
-                } else if (errorCode === 500) {
+                } else if (errorCode === 400) {
                     setCode('Ошибка 500!')
                     setImage(error500)
                     setText(`эмитация ошибки на сервере
@@ -88,6 +87,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={info === '...loading'}
                         // дописать
 
                     >
@@ -97,6 +97,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={info === '...loading'}
                         // дописать
 
                     >
@@ -106,6 +107,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={info === '...loading'}
                         // дописать
 
                     >
