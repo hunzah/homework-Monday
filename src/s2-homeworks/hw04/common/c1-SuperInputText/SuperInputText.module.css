@@ -10,7 +10,9 @@
     width: 24vw;
     height: 2.5vw;
 
-}
+}.input:focus {
+     outline: 2px solid rgba(0, 102, 204, 1);
+ }
 
 .inputWrapper {
     display: flex;
