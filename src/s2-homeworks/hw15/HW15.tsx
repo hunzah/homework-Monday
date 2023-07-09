@@ -53,14 +53,14 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                // setTechs(res)
                 // сохранить пришедшие данные
 
                 //
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
+    const  onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
         // setPage(
@@ -68,6 +68,9 @@ const HW15 = () => {
 
         // sendQuery(
         // setSearchParams(
+            setPage(newPage)
+            setCount(newCount)
+            sendQuery({sort, page: newPage, count: newCount})
 
         //
     }
