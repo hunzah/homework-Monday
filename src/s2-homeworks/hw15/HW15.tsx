@@ -113,6 +113,7 @@ const HW15 = () => {
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
+                    setCount={setCount}
                 />
 
                 <div className={s.rowHeader}>
