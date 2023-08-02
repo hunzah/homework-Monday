@@ -31,7 +31,6 @@ const getTechs = (params: ParamsType) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
-
             {params}
         )
         .catch((e) => {
@@ -48,46 +47,45 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: ParamsType) => {
-        setLoading(true);
+    const sendQuery = (params: any) => {
+        setLoading(true)
         getTechs(params)
             .then((res) => {
-                if (res && res.data && res.data.techs) {
-                    setTechs(res.data.techs);
-                }
-                setLoading(false);
+                // делает студент
+
+                // сохранить пришедшие данные
+
+                //
             })
-            .catch((error) => {
-                console.error('Error fetching techs:', error);
-                setLoading(false);
-            });
-    };
+    }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
+        // setPage(
+        // setCount(
 
-        setSearchParams()
-        setPage(newPage)
-        setCount(newCount)
-        sendQuery({sort, page: newPage, count: newCount})
+        // sendQuery(
+        // setSearchParams(
 
-
+        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
         setSort(newSort)
-        setPage(1) // при сортировке сбрасывать на 1 страницу
+        // setSort(
+        // setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({sort: newSort, count: count, page: page})
-        setSearchParams()
+        // sendQuery(
+        // setSearchParams(
+
+        //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: +params.page, count: +params.count, sort: sort})
+        sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
