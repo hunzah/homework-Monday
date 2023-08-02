@@ -51,10 +51,10 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                // setTechs({res.data})
                 // делает студент
-
                 // сохранить пришедшие данные
-
+                setLoading(false)
                 //
             })
     }
@@ -74,11 +74,10 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
         setSort(newSort)
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
+        // sendQuery()
+        // setSearchParams()
 
         //
     }

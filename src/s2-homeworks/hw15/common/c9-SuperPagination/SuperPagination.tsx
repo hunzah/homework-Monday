@@ -20,11 +20,15 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 
     const onChangeCallback = (event: any, page: number) => {
         // пишет студент
+        onChange( page, +event.target.value )
+        console.log(+event.target.value)
     }
 
-    const onChangeSelect = (event: any) => {
-        // пишет студент
+    const onChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+
+
     }
+
 
     return (
         <div className={s.pagination}>
