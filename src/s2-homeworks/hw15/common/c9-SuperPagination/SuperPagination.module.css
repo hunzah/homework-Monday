@@ -1,11 +1,23 @@
 .pagination {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-bottom: 40px;
 }
 
 .text1 {
-
+    font-weight: 400;
+    line-height: 24px
 }
 
 .text2 {
+
+}
+
+.select {
+    width: 39px;
+    height: 24px;
+    flex-shrink: 0;
 
 }

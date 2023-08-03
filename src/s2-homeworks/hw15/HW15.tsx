@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
 import axios from 'axios'
-import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
-import SuperSort from './common/c10-SuperSort/SuperSort'
-
+import SuperSort from './common/c10-SuperSort/SuperSort';
+import SuperPagination from './common/c9-SuperPagination/SuperPagination';
+import CircularProgress from '@mui/material/CircularProgress';
 /*
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
@@ -52,7 +52,7 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 if (res)
-                setTechs(res.data.techs)
+                    setTechs(res.data.techs)
                 // делает студент
                 // сохранить пришедшие данные
                 setLoading(false)
@@ -64,20 +64,20 @@ const HW15 = () => {
 
         setPage(newPage)
         setCount(newCount)
-        sendQuery({page: newPage, count: newCount})
+        sendQuery({sort: sort, page: newPage, count: newCount})
         setSearchParams()
 
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
+
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({page: page, count: count})
+        sendQuery({sort: newSort, page: page, count: count})
         setSearchParams()
-
-        //
+        console.log(newSort)
     }
 
     useEffect(() => {
@@ -101,32 +101,38 @@ const HW15 = () => {
 
     return (
         <div id={'hw15'}>
-            <div className={s2.hwTitle}>Homework #15</div>
+            {idLoading &&
+                <div id={'hw15-loading'} className={s.loading}>
+                    <CircularProgress size={80}/>
+                </div>}
+            <div className={s.all}>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                <div className={s2.hwTitle}>Homework #15</div>
 
-                <SuperPagination
-                    page={page}
-                    itemsCountForPage={count}
-                    totalCount={totalCount}
-                    onChange={onChangePagination}
+                <div className={s2.hw}>
 
-                />
+                    <SuperPagination
+                        page={page}
+                        itemsCountForPage={count}
+                        totalCount={totalCount}
+                        onChange={onChangePagination}
 
-                <div className={s.rowHeader}>
-                    <div className={s.techHeader}>
-                        tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                    />
+
+                    <div className={s.rowHeader}>
+                        <div className={s.techHeader}>
+                            tech
+                            <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                        </div>
+
+                        <div className={s.developerHeader}>
+                            developer
+                            <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                        </div>
                     </div>
 
-                    <div className={s.developerHeader}>
-                        developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
-                    </div>
+                    {mappedTechs}
                 </div>
-
-                {mappedTechs}
             </div>
         </div>
     )
