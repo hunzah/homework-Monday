@@ -22,9 +22,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 
     const onChangeCallback = (event: any, page: number) => {
         // пишет студент
-        // onChange(page, page)
-        console.log(event)
-
+        onChange(page, itemsCountForPage)
     }
 
     const onChangeSelect = (e:number) => {
