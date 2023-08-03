@@ -53,11 +53,10 @@ const HW15 = () => {
             .then((res) => {
                 if (res)
                 setTechs(res.data.techs)
-                console.log(res?.data.techs)
+                // console.log(res?.data.techs)
                 // делает студент
                 // сохранить пришедшие данные
                 setLoading(false)
-                //
             })
     }
 
